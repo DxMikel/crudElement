@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
-<button id="prueba">Ver Tabla de empleados</button>
+<button id="ver">Ver Tabla de empleados</button>
+<button id="agregar">Agregar Nuevo Empleado</button>
 <div class="display"></div>
 <script
   src="https://code.jquery.com/jquery-3.5.1.js"

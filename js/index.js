@@ -1,9 +1,12 @@
 $(document).ready(function(){
-    $("#prueba").click(function(){
-        ejecutarPrueba();
+    $("#ver").click(function(){
+        verEmpleados();
+    });
+    $("#agregar").click(function(){
+        agregarEmpleados();
     });
 });
-function ejecutarPrueba(){
+function verEmpleados(){
     var data={
         accion: "diClick",
     }

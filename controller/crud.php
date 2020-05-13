@@ -20,7 +20,7 @@ abstract class Crud extends Conexion{
     }
     public function getById($id){
         try{
-            $stm = $this->pdo->prepare("SELECT * FROM $this->tabla WHERE id=?");
+            $stm = $this->pdo->prepare("SELECT * FROM $this->tabla WHERE Id_Empleado=?");
             $stm->execute(array($id));
             return $stm->fetchAll(PDO::FETCH_OBJ);
         }catch(PDOException $e){
@@ -29,7 +29,7 @@ abstract class Crud extends Conexion{
     }
     public function eliminar($id){
         try{
-            $stm = $this->pdo->prepare("DELETE FROM $this->tabla WHERE id=?");
+            $stm = $this->pdo->prepare("DELETE FROM $this->tabla WHERE Id_Empleado=?");
             $stm->execute(array($id));
         }catch(PDOException $e){
             echo $e->getMessage();

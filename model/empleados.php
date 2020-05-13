@@ -15,23 +15,23 @@ class Empleados extends Crud{
     }
 
     public function __set($nombre,$valor){
-        $this->nombre = $valor;
+        $this->$nombre = $valor;
     }
     public function __get($nombre){
-        return $this->nombre = $value;
+        return $this->$nombre;
     }
     public function create(){
         try{
-            $stm = $this->pdo->prepare("INSERT INTO ".self::TABLA."(Nombre, Apellidos,Sueldo,Puesto) VALUES (?,?,?,?)");
-            $stm->execute(array($this->nombre,$this->apellidos,$this->Sueldo,$this->Puesto));
+            $stm = $this->pdo->prepare("INSERT INTO ".self::TABLA." (Nombre, Apellidos,Sueldo,Puesto) VALUES (?,?,?,?)");
+            $stm->execute(array($this->nombre,$this->apellidos,$this->sueldo,$this->puesto));
         }catch(PDOException $e){
             echo $e->getMessage();
         }
     }
     public function update(){
         try{
-            $stm = $this->pdo->prepare("UPDATE ".self::TABLA." SET Nombre=?, Apellidos=?, Sueldo=?, Puesto=? WHERE id=?");
-            $stm->execute(array($this->nombre,$this->apellidos,$this->Sueldo,$this->Puesto,$this->id));
+            $stm = $this->pdo->prepare("UPDATE ".self::TABLA." SET Nombre=?, Apellidos=?, Sueldo=?, Puesto=? WHERE Id_Empleado=?");
+            $stm->execute(array($this->nombre,$this->apellidos,$this->sueldo,$this->puesto,$this->id));
         }catch(PDOException $e){
             echo $e->getMessage();
         }

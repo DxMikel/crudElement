@@ -1,5 +1,5 @@
 <?php
-// require_once "empleados.php";
+// require_once "./model/empleados.php";
 
 // $empleados = new Empleados();
 // print_r($empleados->getAll());

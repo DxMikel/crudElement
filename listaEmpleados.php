@@ -19,6 +19,9 @@ if(isset($accion)){
         case "guardaEditar":
             guardarEditar();
         break;
+        case "eliminar":
+            eliminar();
+        break;
     }
 }
 function verTodo(){
@@ -120,5 +123,9 @@ function guardarEditar(){
         <script>alert("El empleaddo se ha creado con exito);</script>
         <?php
     }
+}
+function eliminar(){
+    $empleados = new Empleados();
+    $empleados->eliminar($_POST["idEmpleado"]);
 }
 ?>

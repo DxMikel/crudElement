@@ -106,3 +106,21 @@ function guardarEditar(){
         alert("Hay un campo vacio favor de revisar");
     }
 }
+function borrar(id){
+    var pregunta = confirm("Seguro que desea eliminar?");
+    if(pregunta) {
+        var data = {
+            accion:"eliminar",
+            idEmpleado:id
+        }
+        $.ajax({
+            type:"POST",
+            dataType:"html",
+            url:"listaEmpleados.php",
+            data:data,
+            success:function(resp){
+                $(".display").html(resp);
+            }
+        });
+    }
+}
